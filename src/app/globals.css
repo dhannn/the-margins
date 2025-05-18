@@ -66,9 +66,50 @@ h1 {
   font-size: 0.8rem;
   color: rgba(0, 0, 0, 0.5); /* soft gray, tweak as needed */
   transition: color 0.3s ease;
-  cursor: help; /* hints that hover is meaningful */
+  /* cursor: help; hints that hover is meaningful */
 }
 
 .fragment:hover .timestamp {
+  color: rgba(0, 0, 0, 0.8); /* darkens slightly */
+}
+
+.footnote {
+  transition: color 0.3s ease;
+}
+
+li {
+  transition: color 0.3s ease;
+  list-style-type: square;
+  margin: 1rem 0rem 1rem 1rem;
+  text-decoration: none;
+}
+
+li::after {
+  content: '';
+  transition: all 0.3s ease;
+  border-bottom: 0.5px solid rgba(0, 0, 0, 0.5);
+  /* opacity: 0; */
+  display: inline-block;
+  height: 100%;
+  width: 10%;
+  position: relative;
+  top: -0.5rem;
+  right: 0;
+  padding: 0;
+  z-index: 100;
+  text-shadow: 
+    1px 1px 0.1px rgba(0, 0, 0, 0.1),  /* Slight bleed effect */
+    -1px -1px 0.1px rgba(0, 0, 0, 0.1); 
+  filter: blur(0.1px); /* Simulates ink spread */
+}
+
+li:hover::after {
+  transition: all 0.3s ease;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.8);
+  /* opacity: 1; */
+  width: 100%;
+}
+
+li:hover {
   color: rgba(0, 0, 0, 0.8); /* darkens slightly */
 }

@@ -1,5 +1,9 @@
 export const fragments = [
     {
+      id: "006",
+      file: () => import('./006.mdx'),
+    },
+    {
       id: "005",
       file: () => import('./005.mdx'),
     },
